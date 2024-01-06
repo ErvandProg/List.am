@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import Categories from "./Categories";
 
 export default function Content() {
 	return (
@@ -66,6 +67,8 @@ export default function Content() {
 						<a href="#" className="text-[15px] overflow-hidden whitespace-nowrap overflow-ellipsis block">Բիզնես էջեր</a>
 					</div>
 				</div>
+
+				<Categories />
 			</div>
 		</div>
 	)
