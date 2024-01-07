@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Subcategories from './Subcategories';
+import BusinessPages from './BusinessPages';
 
 let dataBase = {
 	subcategories: [
@@ -52,6 +53,40 @@ let dataBase = {
 			backgroundColor: "#93BBEE",
 			img: "https://sa.list.am/220.png"
 		}
+	],
+	businessPages: [
+		{
+			img: "https://upa.list.am/4143.jpg",
+			// stars: "5",
+		},
+		{
+			img: "https://upa.list.am/14659.jpg",
+			// stars: "5",
+		},
+		{
+			img: "https://upa.list.am/15100.jpg",
+			// stars: "5",
+		},
+		{
+			img: "https://upa.list.am/14024.jpg",
+			// stars: "5",
+		},
+		{
+			img: "https://upa.list.am/10326.jpg",
+			// stars: "5",
+		},
+		{
+			img: "https://upa.list.am/13416.jpg",
+			// stars: "5",
+		},
+		{
+			img: "https://upa.list.am/2314.jpg",
+			// stars: "5",
+		},
+		{
+			img: "https://upa.list.am/13570.jpg",
+			// stars: "5",
+		}
 	]
 }
 
@@ -60,6 +95,9 @@ export default function Categories() {
 		<div className='w-[100%] flex flex-col justify-center items-center'>
 			<div className='w-[100%] pt-[30px] pb-[20px]'>
 				<Subcategories data={dataBase.subcategories} />
+			</div>
+			<div className="w-[100%] my-[12px] py-[8px]">
+				<BusinessPages data="" />
 			</div>
 		</div>
 	)
