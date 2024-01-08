@@ -6,6 +6,7 @@ import CarService from './CarService';
 import SaleOfApartments from './SaleOfApartments';
 import ApartmentsForRent from './ApartmentsForRent';
 import Urgently from './Urgently';
+import CommercialRealEstateAndOfficeLeasing from './CommercialRealEstateAndOfficeLeasing';
 
 let dataBase = {
 	subcategories: [
@@ -356,6 +357,9 @@ export default function Categories() {
 			</div>
 			<div className="w-[100%] my-[12px] py-[8px]">
 				<Urgently data={dataBase.urgently} />
+			</div>
+			<div className="w-[100%] my-[12px] py-[8px]">
+				<CommercialRealEstateAndOfficeLeasing data={dataBase.apartmentsForRent} />
 			</div>
 		</div>
 	)
