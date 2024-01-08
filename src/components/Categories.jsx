@@ -5,6 +5,7 @@ import BusinessPages from './BusinessPages';
 import CarService from './CarService';
 import SaleOfApartments from './SaleOfApartments';
 import ApartmentsForRent from './ApartmentsForRent';
+import Urgently from './Urgently';
 
 let dataBase = {
 	subcategories: [
@@ -313,7 +314,26 @@ let dataBase = {
 			info: "3 սեն., 113 ք.մ., 4/13 հարկ"
 		}
 	],
-	
+	urgently: [
+		{
+			img: "https://s.list.am/h/835/77022835.webp",
+			price: "$250,000",
+			text: "2 սենյականոց բնակարան Ռուբինյանց փողոցում, 32 ք.մ., 2/5 հարկ, կապիտալ վերանորոգված, քարե շենք",
+			info: "3 սեն., 113 ք.մ., 4/13 հարկ"
+		},
+		{
+			img: "//s.list.am/h/236/77147236.webp",
+			price: "$35,000",
+			text: "Kia K5, 1.6 լ, 2023 թ.",
+			info: "2023 թ., 2000 մղոն, Բենզին"
+		},
+		{
+			img: "https://s.list.am/h/372/75794372.webp",
+			price: "$105,000",
+			text: "1 սենյականոց բնակարան նորակառույց շենքում Արգիշտի փողոցում, 36 ք.մ., բարձր առաստաղներ, 11/14 հարկ",
+			info: "1 սեն., 36 ք.մ., 11/14 հարկ"
+		}
+	]
 }
 
 export default function Categories() {
@@ -333,6 +353,9 @@ export default function Categories() {
 			</div>
 			<div className="w-[100%] my-[12px] py-[8px]">
 				<ApartmentsForRent data={dataBase.apartmentsForRent} />
+			</div>
+			<div className="w-[100%] my-[12px] py-[8px]">
+				<Urgently data={dataBase.urgently} />
 			</div>
 		</div>
 	)
