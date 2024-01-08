@@ -8,6 +8,7 @@ import ApartmentsForRent from './ApartmentsForRent';
 import Urgently from './Urgently';
 import CommercialRealEstateAndOfficeLeasing from './CommercialRealEstateAndOfficeLeasing';
 import CarRental from './CarRental';
+import HousesForRent from './HousesForRent';
 
 let dataBase = {
 	subcategories: [
@@ -335,6 +336,44 @@ let dataBase = {
 			text: "1 սենյականոց բնակարան նորակառույց շենքում Արգիշտի փողոցում, 36 ք.մ., բարձր առաստաղներ, 11/14 հարկ",
 			info: "1 սեն., 36 ք.մ., 11/14 հարկ"
 		}
+	],
+	housesForRent: [
+		{
+			img: "https://s.list.am/h/228/76255228.webp",
+			price: "$128,000",
+			text: "2 սենյականոց բնակարան Տիգրան Մեծի պողոտայում, 37 ք.մ., բարձր առաստաղներ, կապիտալ վերանորոգված",
+			info: "2 սեն., 37 ք.մ., 4/4 հարկ"
+		},
+		{
+			img: "https://s.list.am/h/232/75026232.webp",
+			price: "$235,000",
+			text: "2 սենյականոց բնակարան Վարդանանց փողոցում, 51 ք.մ., 1/9 հարկ, դիզայներական ոճով վերանորոգված",
+			info: "3 սեն., 101 ք.մ., 12/13 հարկ"
+		},
+		{
+			img: "https://s.list.am/h/055/77129055.webp",
+			price: "$153,000",
+			text: "2 սենյականոց բնակարան նորակառույց շենքում Շիրակի փողոցում, 40 ք.մ., բարձր առաստաղներ, 1/2 հարկ",
+			info: "2 սեն., 51 ք.մ., 1/9 հարկ"
+		},
+		{
+			img: "https://s.list.am/h/365/76218365.webp",
+			price: "$48,200",
+			text: "4 սենյականոց բնակարան նորակառույց շենքում Մոնթե Մելքոնյան փողոցում, 121 ք.մ., 2 սանհանգույց",
+			info: "2 սեն., 40 ք.մ., 1/2 հարկ"
+		},
+		{
+			img: "https://s.list.am/h/704/77015704.webp",
+			price: "$210,000",
+			text: "3 սենյականոց բնակարան նորակառույց շենքում, Komitas Ave, 113 ք.մ., 2 սանհանգույց, մի քանի պատշգամբ",
+			info: "4 սեն., 121 ք.մ., 3/16 հարկ"
+		},
+		{
+			img: "https://s.list.am/h/835/77022835.webp",
+			price: "$250,000",
+			text: "2 սենյականոց բնակարան Ռուբինյանց փողոցում, 32 ք.մ., 2/5 հարկ, կապիտալ վերանորոգված, քարե շենք",
+			info: "3 սեն., 113 ք.մ., 4/13 հարկ"
+		}
 	]
 }
 
@@ -364,6 +403,21 @@ export default function Categories() {
 			</div>
 			<div className="w-[100%] my-[12px] py-[8px]">
 				<CarRental data={dataBase.carService} />
+			</div>
+			<div className="w-[100%] my-[12px] py-[8px]">
+				<Urgently data={dataBase.urgently} />
+			</div>
+			<div className="w-[100%] my-[12px] py-[8px]">
+				<CarRental data={dataBase.carService} />
+			</div>
+			<div className="w-[100%] my-[12px] py-[8px]">
+				<CarRental data={dataBase.carService} />
+			</div>
+			<div className="w-[100%] my-[12px] py-[8px]">
+				<Urgently data={dataBase.urgently} />
+			</div>
+			<div className="w-[100%] my-[12px] py-[8px]">
+				<HousesForRent data={dataBase.housesForRent} />
 			</div>
 		</div>
 	)
