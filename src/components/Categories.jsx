@@ -419,6 +419,36 @@ export default function Categories() {
 			<div className="w-[100%] my-[12px] py-[8px]">
 				<HousesForRent data={dataBase.housesForRent} />
 			</div>
+			<div className="w-[100%] my-[12px] py-[8px]">
+				<CarService data={dataBase.carService} />
+			</div>
+			<div className="w-[100%] my-[12px] py-[8px]">
+				<Urgently data={dataBase.urgently} />
+			</div>
+			<div className="w-[100%] my-[12px] py-[8px]">
+				<ApartmentsForRent data={dataBase.apartmentsForRent} />
+			</div>
+			<div className="w-[100%] my-[12px] py-[8px]">
+				<ApartmentsForRent data={dataBase.apartmentsForRent} />
+			</div>
+			<div className="w-[100%] my-[12px] py-[8px]">
+				<CarRental data={dataBase.carService} />
+			</div>
+			<div className="w-[100%] my-[12px] py-[8px]">
+				<CommercialRealEstateAndOfficeLeasing data={dataBase.apartmentsForRent} />
+			</div>
+			<div className="w-[100%] my-[12px] py-[8px]">
+				<CarRental data={dataBase.carService} />
+			</div>
+			<div className="w-[100%] my-[12px] py-[8px]">
+				<CarService data={dataBase.carService} />
+			</div>
+			<div className="w-[100%] my-[12px] py-[8px]">
+				<SaleOfApartments data={dataBase.saleOfApartments} />
+			</div>
+			<div className="w-[100%] my-[12px] py-[8px]">
+				<CommercialRealEstateAndOfficeLeasing data={dataBase.apartmentsForRent} />
+			</div>
 		</div>
 	)
 }
