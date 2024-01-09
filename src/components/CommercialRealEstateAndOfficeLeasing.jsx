@@ -9,7 +9,7 @@ export default function CommercialRealEstateAndOfficeLeasing(props) {
 			</a>
 			<div className='flex overflow-hidden flex-wrap justify-between'>
 				{props.data.map((apartment, index) => (
-					<div key={index} className="relative inline-block w-[174px] mx-[0] my-[8px] text-left align-top">
+					<div key={index} className="relative inline-block w-[174px] mx-[0] my-[8px] text-left align-top cursor-pointer">
 						<img src={apartment.img} alt={`Apartment ${index + 1}`} className="w-[174px] h-[165px] rounded-[8px] [transition:all_0.2s] object-cover" />
 						<div className="my-[6px]">
 							<div className="text-[16px] font-bold text-[#222] mb-[2px]">{apartment.price}</div>

@@ -3,7 +3,7 @@ import Categories from "./Categories";
 
 export default function Content() {
 	return (
-		<div className='w-[100%] flex justify-center items-center bg-[#fff]'>
+		<div className='w-[100%] flex justify-center items-center bg-[#fff] pt-[60px]'>
 			<div className="w-[1140px]">
 				<div className="grid mt-[20px] gap-x-[8px] [grid-template:auto_auto_auto_auto_auto/auto_auto_auto_auto_auto]">
 					<div className="flex mr-[50px] my-[6px] items-center">
