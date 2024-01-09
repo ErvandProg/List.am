@@ -1,8 +1,60 @@
-import React from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+import { AddContext } from '../App';
 
 export default function Header() {
+	const { updateProductInfo, productInfo } = useContext(AddContext);
+	const [isModalOpen, setModalOpen] = useState(false);
+	const [dataB, setDataB] = useState({
+		img: '',
+		price: '',
+		text: '',
+		info: '',
+		quantity: '',
+		category: ''
+	});
+
+	useEffect(() => {
+		setDataB((prevData) => ({
+			...prevData,
+			...productInfo,
+		}));
+	}, [productInfo]);
+
+	function change(e) {
+		const { name, value } = e.target;
+		setDataB((prevData) => ({
+			...prevData,
+			[name]: value,
+		}));
+	}
+
+	function save() {
+		if (dataB.img !== '' &&dataB.price !== '' &&dataB.text !== '' &&dataB.info !== '' &&dataB.quantity !== '' &&dataB.category !== '') {
+			const newProductInfo = { ...dataB };
+			updateProductInfo(newProductInfo);
+			const d = {
+				img: '',
+				price: '',
+				text: '',
+				info: '',
+				quantity: '',
+				category: ''
+			};
+			setDataB(d);
+			closeModal();
+		}
+	}
+
+	function openModal() {
+		setModalOpen(true);
+	}
+
+	function closeModal() {
+		setModalOpen(false);
+	}
+
 	return (
-		<header className='flex justify-center h-[61px] items-center z-50 [box-shadow:0_1px_6px_1px_rgba(0,0,0,0.06)]'>
+		<header className='w-[100%] flex justify-center [box-shadow:0_1px_6px_1px_rgba(0,0,0,0.6)] bg-white h-[61px] items-center z-50 fixed'>
 			<div className=" relative flex items-center w-[1140px] max-w-[1140px] h-[60px] m-auto flex-wrap">
 				<div className="">
 					<img src="../../public/list-am-logo.png" alt="" className='w-[140px] h-[40px] object-cover mr-[10px]' />
@@ -28,7 +80,7 @@ export default function Header() {
 					<a href="" className='text-[13px] font-normal text-[#fff] inline-block m-0 px-[20px] py-[8px] cursor-pointer no-underline rounded-[20px] bg-[#0c72ea]'>Տեղադրել հայտարարություն</a>
 				</div>
 				<div className="absolute right-[-80px] flex gap-2">
-					<button className='w-[25px] h-[25px] rounded-[100%] border border-black flex justify-center items-center'>
+					<button onClick={openModal} className='w-[25px] h-[25px] rounded-[100%] border border-black flex justify-center items-center'>
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-[18px] h-[18px]">
 							<path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
 						</svg>
@@ -39,6 +91,51 @@ export default function Header() {
 						</svg>
 					</button>
 				</div>
+				{isModalOpen && (
+					<div className="fixed top-0 left-0 w-screen h-screen flex justify-center items-center bg-gray-800 bg-opacity-75">
+						<div className="w-[600px] bg-white p-8 rounded-lg flex flex-col gap-4">
+							<div className="w-[100%] flex justify-center">
+								<h2 className='text-center'>Edit Product</h2>
+							</div>
+							<div className="flex flex-col">
+								<label className='flex justify-between items-center mt-3'>
+									Image URL:
+									<input type="text" name="img" value={dataB.img} onChange={change} className="border border-black pl-[4px] pr-[4px]" />
+								</label>
+								<label className='flex justify-between items-center mt-3'>
+									Price:
+									<input type="text" name="price" value={dataB.price} onChange={change} className="border border-black pl-[4px] pr-[4px]" />
+								</label>
+								<label className='flex justify-between items-center mt-3'>
+									Product Name:
+									<input type="text" name="text" value={dataB.text} onChange={change} className="border border-black pl-[4px] pr-[4px]" />
+								</label>
+								<label className='flex justify-between items-center mt-3'>
+									Product Info:
+									<input type="text" name="info" value={dataB.info} onChange={change} className="border border-black pl-[4px] pr-[4px]" />
+								</label>
+								<label className='flex justify-between items-center mt-3'>
+									Quantity:
+									<input type="number" name="quantity" value={dataB.quantity} onChange={change} className="border border-black pl-[4px] pr-[4px]" />
+								</label>
+								<label className='flex justify-between items-center mt-3'>
+									Category:
+									<select name='category' value={dataB.category} onChange={change} className='' >
+										<option value="ApartmentsForRent">Apartment For Rent</option>
+										<option value="CarRental">Car Rental</option>
+										<option value="CommercialRealEstateAndOfficeLeasing">Commercial Real Estate And Office Leasing</option>
+										<option value="HousesForRent">Houses For Rent</option>
+										<option value="SaleOfApartment">Sale Of Apartment</option>
+									</select>
+								</label>
+							</div>
+							<div className="w-[100%] flex justify-center items-center gap-[20px] mt-[20px]">
+								<button onClick={save} className="w-[80px] py-[4px] rounded border border-black">Save</button>
+								<button onClick={closeModal} className="w-[80px] py-[4px] rounded border border-black">Close</button>
+							</div>
+						</div>
+					</div>
+				)}
 			</div>
 		</header>
 	)
